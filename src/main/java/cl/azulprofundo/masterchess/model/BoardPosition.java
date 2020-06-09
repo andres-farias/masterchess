@@ -1,9 +1,11 @@
 package cl.azulprofundo.masterchess.model;
 
 public class BoardPosition {
+
     private static final BoardPosition nullPosition = new NullBoardPosition();
-    private BoardColumnsEnum column;
-    private int raw;
+
+    private final BoardColumnsEnum column;
+    private final int raw;
 
     public BoardPosition(BoardColumnsEnum column, int raw) {
         this.column = column;
@@ -31,5 +33,24 @@ public class BoardPosition {
         public boolean isNullPosition() {
             return true;
         }
+    }
+
+    public BoardColumnsEnum getColumn() {
+        return column;
+    }
+
+    public int getRaw() {
+        return raw;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        BoardPosition that = (BoardPosition) o;
+
+        if (raw != that.raw) return false;
+        return column == that.column;
     }
 }

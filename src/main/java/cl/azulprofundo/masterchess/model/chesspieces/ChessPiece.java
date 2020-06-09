@@ -3,6 +3,8 @@ package cl.azulprofundo.masterchess.model.chesspieces;
 import cl.azulprofundo.masterchess.model.BoardPosition;
 import cl.azulprofundo.masterchess.model.ChessPieceColor;
 
+import java.util.List;
+
 /**
  * The basic info that must be provided for any chess piece is its color.
  */
@@ -23,4 +25,10 @@ public abstract class ChessPiece {
     public ChessPieceColor getColor() {
         return color;
     }
+
+    public BoardPosition getBoardPosition() {
+        return boardPosition;
+    }
+
+    public abstract List<BoardPosition> getPossiblePositionsFromMoves();
 }
