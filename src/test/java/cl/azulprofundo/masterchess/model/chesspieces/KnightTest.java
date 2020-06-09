@@ -1,14 +1,12 @@
 package cl.azulprofundo.masterchess.model.chesspieces;
 
-import cl.azulprofundo.masterchess.model.BoardColumnsEnum;
-import cl.azulprofundo.masterchess.model.BoardPosition;
-import org.junit.Assert;
+import cl.azulprofundo.masterchess.model.board.BoardPosition;
 import org.junit.Test;
 
 import java.util.List;
 
-import static cl.azulprofundo.masterchess.model.BoardColumnsEnum.*;
-import static cl.azulprofundo.masterchess.model.ChessPieceColor.WHITE;
+import static cl.azulprofundo.masterchess.model.board.BoardColumnsEnum.*;
+import static cl.azulprofundo.masterchess.model.chesspieces.ChessPieceColor.WHITE;
 import static org.junit.Assert.assertEquals;
 
 public class KnightTest {

@@ -1,8 +1,7 @@
 package cl.azulprofundo.masterchess.model.chesspieces;
 
-import cl.azulprofundo.masterchess.model.BoardColumnsEnum;
-import cl.azulprofundo.masterchess.model.BoardPosition;
-import cl.azulprofundo.masterchess.model.ChessPieceColor;
+import cl.azulprofundo.masterchess.model.board.BoardColumnsEnum;
+import cl.azulprofundo.masterchess.model.board.BoardPosition;
 
 import java.util.ArrayList;
 import java.util.List;

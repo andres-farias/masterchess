@@ -1,13 +1,13 @@
 package cl.azulprofundo.masterchess.gameplay;
 
-import cl.azulprofundo.masterchess.model.ChessPieceColor;
+import cl.azulprofundo.masterchess.model.chesspieces.ChessPieceColor;
 import cl.azulprofundo.masterchess.model.chesspieces.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static cl.azulprofundo.masterchess.model.ChessPieceColor.BLACK;
-import static cl.azulprofundo.masterchess.model.ChessPieceColor.WHITE;
+import static cl.azulprofundo.masterchess.model.chesspieces.ChessPieceColor.BLACK;
+import static cl.azulprofundo.masterchess.model.chesspieces.ChessPieceColor.WHITE;
 
 /**
  * This class manages the pieces of a game (instantiating the few 16x2 pieces).

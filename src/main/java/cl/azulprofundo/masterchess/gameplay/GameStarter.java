@@ -1,16 +1,16 @@
 package cl.azulprofundo.masterchess.gameplay;
 
-import cl.azulprofundo.masterchess.model.BoardColumnsEnum;
-import cl.azulprofundo.masterchess.model.BoardPosition;
-import cl.azulprofundo.masterchess.model.BoardState;
+import cl.azulprofundo.masterchess.model.board.BoardColumnsEnum;
+import cl.azulprofundo.masterchess.model.board.BoardPosition;
+import cl.azulprofundo.masterchess.model.board.BoardState;
 import cl.azulprofundo.masterchess.model.chesspieces.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static cl.azulprofundo.masterchess.model.BoardColumnsEnum.*;
-import static cl.azulprofundo.masterchess.model.ChessPieceColor.BLACK;
-import static cl.azulprofundo.masterchess.model.ChessPieceColor.WHITE;
+import static cl.azulprofundo.masterchess.model.board.BoardColumnsEnum.*;
+import static cl.azulprofundo.masterchess.model.chesspieces.ChessPieceColor.BLACK;
+import static cl.azulprofundo.masterchess.model.chesspieces.ChessPieceColor.WHITE;
 
 /**
  * This class is responsible for creating an initial configuration board.

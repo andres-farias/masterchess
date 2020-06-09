@@ -1,6 +1,6 @@
 package cl.azulprofundo.masterchess.workers;
 
-import cl.azulprofundo.masterchess.model.BoardState;
+import cl.azulprofundo.masterchess.model.board.BoardState;
 
 /**
  * This class is responsible for analysing a specific board state.

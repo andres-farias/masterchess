@@ -1,6 +1,6 @@
-package cl.azulprofundo.masterchess.model;
+package cl.azulprofundo.masterchess.model.chesspieces;
 
-import cl.azulprofundo.masterchess.model.chesspieces.ChessPiece;
+import cl.azulprofundo.masterchess.model.board.BoardPosition;
 
 public class ChessPieceMove {
 

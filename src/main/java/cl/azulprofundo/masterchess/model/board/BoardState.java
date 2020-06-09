@@ -1,6 +1,7 @@
-package cl.azulprofundo.masterchess.model;
+package cl.azulprofundo.masterchess.model.board;
 
 import cl.azulprofundo.masterchess.model.chesspieces.ChessPiece;
+import cl.azulprofundo.masterchess.model.chesspieces.ChessPieceMove;
 import cl.azulprofundo.masterchess.model.exceptions.EmptyBoardPositionException;
 
 import java.util.ArrayList;

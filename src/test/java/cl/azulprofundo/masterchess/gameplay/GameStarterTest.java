@@ -1,10 +1,9 @@
 package cl.azulprofundo.masterchess.gameplay;
 
-import cl.azulprofundo.masterchess.model.BoardState;
-import org.junit.Assert;
+import cl.azulprofundo.masterchess.model.board.BoardState;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class GameStarterTest {
 
@@ -12,6 +11,6 @@ public class GameStarterTest {
     public void testStartingBoard() {
         BoardState startingBoardState = GameStarter.getStartingBoard();
 
-        Assert.assertTrue(startingBoardState.getPieces().size() == 16*2);
+        assertEquals(startingBoardState.getPieces().size(), 16 * 2);
     }
 }

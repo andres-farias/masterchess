@@ -1,4 +1,4 @@
-package cl.azulprofundo.masterchess.model;
+package cl.azulprofundo.masterchess.model.board;
 
 import org.junit.Test;
 

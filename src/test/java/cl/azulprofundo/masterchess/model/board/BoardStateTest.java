@@ -1,13 +1,14 @@
-package cl.azulprofundo.masterchess.model;
+package cl.azulprofundo.masterchess.model.board;
 
+import cl.azulprofundo.masterchess.model.chesspieces.ChessPieceMove;
 import cl.azulprofundo.masterchess.model.chesspieces.Knight;
 import cl.azulprofundo.masterchess.model.exceptions.EmptyBoardPositionException;
 import org.junit.Test;
 
 import java.util.Arrays;
 
-import static cl.azulprofundo.masterchess.model.BoardColumnsEnum.*;
-import static cl.azulprofundo.masterchess.model.ChessPieceColor.WHITE;
+import static cl.azulprofundo.masterchess.model.board.BoardColumnsEnum.*;
+import static cl.azulprofundo.masterchess.model.chesspieces.ChessPieceColor.WHITE;
 import static java.util.Collections.singletonList;
 import static org.junit.Assert.*;
 
