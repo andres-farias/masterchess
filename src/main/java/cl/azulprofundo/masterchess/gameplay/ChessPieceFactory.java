@@ -14,6 +14,12 @@ import static cl.azulprofundo.masterchess.model.chesspieces.ChessPieceColor.WHIT
  */
 public class ChessPieceFactory {
 
+    /**
+     * This method creates a list of all the pieces that are necessary to start a chess game, without setting them a
+     * specific position.
+     *
+     * @return A list of all the chess pieces.
+     */
     public static List<ChessPiece> getAllPieces() {
 
         List<ChessPiece> pieces = new ArrayList<>();
