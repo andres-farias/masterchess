@@ -71,4 +71,14 @@ public class BoardStateTest {
         assertFalse(boardState.isValidMove(invalidMove));
         assertFalse(boardState.isValidMove(invalidMove2));
     }
+
+    @Test
+    public void testGetPossiblesMove() {
+        BoardPosition upperLeftCorner = new BoardPosition(A, 8);
+        Knight whiteKnight = new Knight(WHITE, upperLeftCorner);
+
+        BoardState boardState = new BoardState(singletonList(whiteKnight));
+        assertEquals(2, boardState.getPossibleMoves().size());
+
+    }
 }
