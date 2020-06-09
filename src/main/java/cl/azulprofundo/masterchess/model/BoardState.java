@@ -3,7 +3,9 @@ package cl.azulprofundo.masterchess.model;
 import cl.azulprofundo.masterchess.model.chesspieces.ChessPiece;
 import cl.azulprofundo.masterchess.model.exceptions.EmptyBoardPositionException;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * This class represents the state of the chess board with a particular configuration.
@@ -52,7 +54,7 @@ public class BoardState {
      * @param chessPieceMove The move subject to validation.
      * @return <code>true</code> if the move is valid and <code>false</code> otherwise.
      */
-    private boolean isValidMove(ChessPieceMove chessPieceMove) {
+    protected boolean isValidMove(ChessPieceMove chessPieceMove) {
 
         BoardPosition destination = chessPieceMove.getTargetPosition();
         if (isEmpty(destination)) {
@@ -70,7 +72,7 @@ public class BoardState {
         return !pieceAtDestination.getColor().equals(chessPieceMove.getPiece().getColor());
     }
 
-    private ChessPiece getPieceAt(BoardPosition destination) throws EmptyBoardPositionException {
+    public ChessPiece getPieceAt(BoardPosition destination) throws EmptyBoardPositionException {
 
         for (ChessPiece piece : pieces) {
             if (piece.getBoardPosition().equals(destination)) {
