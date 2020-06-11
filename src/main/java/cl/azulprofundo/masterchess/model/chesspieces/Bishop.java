@@ -17,4 +17,9 @@ public class Bishop extends ChessPiece {
     public List<BoardPosition> getPossiblePositionsFromMoves() {
         throw new AbstractMethodError();
     }
+
+    @Override
+    protected String getShortName() {
+        return "BI";
+    }
 }
