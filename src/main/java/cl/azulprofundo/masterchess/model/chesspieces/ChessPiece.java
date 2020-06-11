@@ -30,4 +30,24 @@ public abstract class ChessPiece {
     }
 
     public abstract List<BoardPosition> getPossiblePositionsFromMoves();
+
+    /**
+     * This method is responsible for construct the hash for this piece, which is the short name for the piece,
+     * followed by the two characters that determine its position.
+     *
+     * @return The unique hash associated for this piece and its position.
+     */
+    public String getHash() {
+        return getShortName() + this.color.getShortName() + this.boardPosition.toString();
+    }
+
+    /**
+     * This method is responsible for defining the short name for each piece which is constructed using two
+     * representative letters.
+     * <p>
+     * For example, the a Knight piece should return: 'KN' and the King 'KI'.
+     *
+     * @return The piece' short name.
+     */
+    protected abstract String getShortName();
 }

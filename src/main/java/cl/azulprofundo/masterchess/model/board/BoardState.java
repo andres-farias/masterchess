@@ -4,19 +4,48 @@ import cl.azulprofundo.masterchess.model.chesspieces.ChessPiece;
 import cl.azulprofundo.masterchess.model.chesspieces.ChessPieceMove;
 import cl.azulprofundo.masterchess.model.exceptions.EmptyBoardPositionException;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 /**
  * This class represents the state of the chess board with a particular configuration.
+ *
+ * @author Andres Farias
  */
+@Entity
 public class BoardState {
+
+    private static final long serialVersionUID = 5601824768856174817L;
+
+    @Id
+    private String hashName;
+
+    @Column
+    private boolean isFinal;
 
     /**
      * The state of the board is defined by the pieces that are actually on it
      */
+    @Transient
     private final List<ChessPiece> pieces;
+
+    public BoardState() {
+        this.pieces = new ArrayList<>();
+        this.hashName = generateHash();
+    }
+
+    private String generateHash() {
+        StringBuilder hash = new StringBuilder();
+        for (ChessPiece piece : pieces) {
+            hash.append(piece.getHash()).append(":");
+        }
+        return hash.toString();
+    }
 
     public BoardState(List<ChessPiece> pieces) {
         this.pieces = pieces;
@@ -84,6 +113,12 @@ public class BoardState {
         throw new EmptyBoardPositionException();
     }
 
+    /**
+     * This method is responsible for determining if a given board position is empty (no chess piece on there).
+     *
+     * @param position The position in question.
+     * @return <code>true</code> if the position is empty and <code>false</code> otherwise.
+     */
     boolean isEmpty(BoardPosition position) {
 
         for (ChessPiece piece : pieces) {
@@ -93,5 +128,29 @@ public class BoardState {
         }
 
         return true;
+    }
+
+    /**
+     * This method is responsible for returning the correct Hash for this object.
+     *
+     * @return The hash name representing this board configuration state.
+     */
+    public String getHashName() {
+        if (this.hashName == null || this.hashName.equals("")) {
+            this.hashName = generateHash();
+        }
+        return this.hashName;
+    }
+
+    public void setHashName(String hashName) {
+        this.hashName = hashName;
+    }
+
+    public boolean isFinal() {
+        return getPossibleMoves().isEmpty();
+    }
+
+    public void setFinal(boolean aFinal) {
+        isFinal = aFinal;
     }
 }

@@ -1,0 +1,18 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  masterchess-postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: masterchesspw
+    ports:
+    - 9432:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 9200:8080

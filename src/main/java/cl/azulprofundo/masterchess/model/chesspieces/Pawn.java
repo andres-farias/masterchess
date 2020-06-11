@@ -18,4 +18,9 @@ public class Pawn extends ChessPiece {
     public List<BoardPosition> getPossiblePositionsFromMoves() {
         return null;
     }
+
+    @Override
+    protected String getShortName() {
+        return "PW";
+    }
 }

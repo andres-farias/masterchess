@@ -73,4 +73,9 @@ public class Knight extends ChessPiece {
 
         return possiblePositions;
     }
+
+    @Override
+    protected String getShortName() {
+        return "KN";
+    }
 }

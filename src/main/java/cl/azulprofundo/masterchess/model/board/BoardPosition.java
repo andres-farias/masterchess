@@ -53,4 +53,9 @@ public class BoardPosition {
         if (raw != that.raw) return false;
         return column == that.column;
     }
+
+    @Override
+    public String toString() {
+        return column.name() + raw;
+    }
 }
