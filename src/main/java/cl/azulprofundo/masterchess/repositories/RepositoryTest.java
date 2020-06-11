@@ -1,4 +1,4 @@
-package cl.azulprofundo.masterchess.model;
+package cl.azulprofundo.masterchess.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 

@@ -1,7 +1,7 @@
 package cl.azulprofundo.masterchess;
 
-import cl.azulprofundo.masterchess.model.PersistenceTestEntity;
-import cl.azulprofundo.masterchess.model.RepositoryTest;
+import cl.azulprofundo.masterchess.repositories.PersistenceTestEntity;
+import cl.azulprofundo.masterchess.repositories.RepositoryTest;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
