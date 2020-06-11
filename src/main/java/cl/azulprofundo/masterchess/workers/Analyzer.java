@@ -3,6 +3,8 @@ package cl.azulprofundo.masterchess.workers;
 import cl.azulprofundo.masterchess.gameplay.GameStarter;
 import cl.azulprofundo.masterchess.model.board.BoardState;
 import cl.azulprofundo.masterchess.repositories.BoardStateRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
@@ -13,19 +15,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class Analyzer {
 
+    private static final Logger logger = LoggerFactory.getLogger(Analyzer.class);
+
     @Bean
     public CommandLineRunner chessAnalyzer(BoardStateRepository repository) {
         return (args) -> {
-            System.out.println("CHESS ANALYZER");
             BoardState startingBoard = GameStarter.getStartingBoard();
+            logger.info("BoardState: {}", startingBoard.getHashName());
 
             repository.save(startingBoard);
-            System.out.println("BoardState: " + startingBoard.getHashName());
-            System.out.println();
-            System.out.println("FIND ALL STATES");
-            for (BoardState test: repository.findAll()){
-                System.out.println(test.toString());
-            }
+            logger.debug("BoardState persisted");
         };
     }
     public boolean isGameOver(BoardState boardState){

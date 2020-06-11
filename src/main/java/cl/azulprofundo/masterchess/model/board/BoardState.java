@@ -3,6 +3,8 @@ package cl.azulprofundo.masterchess.model.board;
 import cl.azulprofundo.masterchess.model.chesspieces.ChessPiece;
 import cl.azulprofundo.masterchess.model.chesspieces.ChessPieceMove;
 import cl.azulprofundo.masterchess.model.exceptions.EmptyBoardPositionException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,6 +23,7 @@ import java.util.List;
 public class BoardState {
 
     private static final long serialVersionUID = 5601824768856174817L;
+    private static final Logger logger = LoggerFactory.getLogger(BoardState.class);
 
     @Id
     private String hashName;
