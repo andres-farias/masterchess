@@ -10,13 +10,23 @@ import java.util.List;
 
 /**
  * This class represents the state of the chess board with a particular configuration.
+ * @author Andres Farias
  */
 public class BoardState {
+
+    private static final long serialVersionUID = 5601824768856174817L;
+
+    private String hashName;
 
     /**
      * The state of the board is defined by the pieces that are actually on it
      */
     private final List<ChessPiece> pieces;
+
+    public BoardState() {
+        this.pieces = new ArrayList<>();
+    }
+
 
     public BoardState(List<ChessPiece> pieces) {
         this.pieces = pieces;
@@ -93,5 +103,13 @@ public class BoardState {
         }
 
         return true;
+    }
+
+    public String getHashName() {
+        return hashName;
+    }
+
+    public void setHashName(String hashName) {
+        this.hashName = hashName;
     }
 }
