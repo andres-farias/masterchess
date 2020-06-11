@@ -18,5 +18,7 @@ public class ChessMasterServlet extends HttpServlet {
         BoardState startingBoard = GameStarter.getStartingBoard();
         PrintWriter writer = resp.getWriter();
         writer.println(startingBoard.toString());
+
+
     }
 }
