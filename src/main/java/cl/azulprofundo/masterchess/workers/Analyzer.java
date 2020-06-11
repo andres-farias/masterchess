@@ -19,7 +19,7 @@ public class Analyzer {
             System.out.println("CHESS ANALYZER");
             BoardState startingBoard = GameStarter.getStartingBoard();
 
-            // repository.save(startingBoard);
+            repository.save(startingBoard);
             System.out.println("BoardState: " + startingBoard.getHashName());
             System.out.println();
             System.out.println("FIND ALL STATES");
