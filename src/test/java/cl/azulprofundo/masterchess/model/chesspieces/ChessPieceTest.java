@@ -4,8 +4,8 @@ import cl.azulprofundo.masterchess.model.board.BoardPosition;
 import org.junit.Test;
 
 import static cl.azulprofundo.masterchess.model.board.BoardColumnsEnum.A;
-import static cl.azulprofundo.masterchess.model.chesspieces.ChessPieceColor.BLACK;
-import static cl.azulprofundo.masterchess.model.chesspieces.ChessPieceColor.WHITE;
+import static cl.azulprofundo.masterchess.model.gameplay.ChessColor.BLACK;
+import static cl.azulprofundo.masterchess.model.gameplay.ChessColor.WHITE;
 import static org.junit.Assert.assertEquals;
 
 public class ChessPieceTest {

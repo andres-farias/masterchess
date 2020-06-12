@@ -1,4 +1,4 @@
-package cl.azulprofundo.masterchess.gameplay;
+package cl.azulprofundo.masterchess.model.gameplay;
 
 import cl.azulprofundo.masterchess.model.chesspieces.ChessPiece;
 import org.junit.Assert;
@@ -12,6 +12,6 @@ public class ChessPieceFactoryTest {
     public void testGameSetPieces() {
         List<ChessPiece> allPieces = ChessPieceFactory.getAllPieces();
 
-        Assert.assertTrue(allPieces.size() == 16*2);
+        Assert.assertEquals(allPieces.size(), 16 * 2);
     }
 }

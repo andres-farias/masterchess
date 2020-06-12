@@ -1,6 +1,7 @@
 package cl.azulprofundo.masterchess.model.chesspieces;
 
 import cl.azulprofundo.masterchess.model.board.BoardPosition;
+import cl.azulprofundo.masterchess.model.gameplay.ChessColor;
 
 import java.util.List;
 
@@ -9,19 +10,20 @@ import java.util.List;
  */
 public abstract class ChessPiece {
 
-    private final ChessPieceColor color;
+    private final ChessColor color;
+
     private BoardPosition boardPosition;
 
-    public ChessPiece(ChessPieceColor pieceColor) {
+    public ChessPiece(ChessColor pieceColor) {
         this(pieceColor, BoardPosition.getNullPosition());
     }
 
-    public ChessPiece(ChessPieceColor pieceColor, BoardPosition boardPosition) {
+    public ChessPiece(ChessColor pieceColor, BoardPosition boardPosition) {
         this.color = pieceColor;
         this.boardPosition = boardPosition;
     }
 
-    public ChessPieceColor getColor() {
+    public ChessColor getColor() {
         return color;
     }
 

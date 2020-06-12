@@ -8,7 +8,7 @@ import org.junit.Test;
 import java.util.Arrays;
 
 import static cl.azulprofundo.masterchess.model.board.BoardColumnsEnum.*;
-import static cl.azulprofundo.masterchess.model.chesspieces.ChessPieceColor.WHITE;
+import static cl.azulprofundo.masterchess.model.gameplay.ChessColor.WHITE;
 import static java.util.Collections.singletonList;
 import static org.junit.Assert.*;
 

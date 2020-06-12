@@ -1,13 +1,12 @@
-package cl.azulprofundo.masterchess.gameplay;
+package cl.azulprofundo.masterchess.model.gameplay;
 
-import cl.azulprofundo.masterchess.model.chesspieces.ChessPieceColor;
 import cl.azulprofundo.masterchess.model.chesspieces.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static cl.azulprofundo.masterchess.model.chesspieces.ChessPieceColor.BLACK;
-import static cl.azulprofundo.masterchess.model.chesspieces.ChessPieceColor.WHITE;
+import static cl.azulprofundo.masterchess.model.gameplay.ChessColor.WHITE;
+import static cl.azulprofundo.masterchess.model.gameplay.ChessColor.BLACK;
 
 /**
  * This class manages the pieces of a game (instantiating the few 16x2 pieces).
@@ -40,7 +39,7 @@ public class ChessPieceFactory {
             pieces.add(new Bishop(BLACK));
         }
 
-        for (ChessPieceColor color : ChessPieceColor.values()) {
+        for (ChessColor color : ChessColor.values()) {
             pieces.add(new Queen(color));
             pieces.add(new King(color));
         }

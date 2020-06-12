@@ -1,15 +1,16 @@
 package cl.azulprofundo.masterchess.model.chesspieces;
 
 import cl.azulprofundo.masterchess.model.board.BoardPosition;
+import cl.azulprofundo.masterchess.model.gameplay.ChessColor;
 
 import java.util.List;
 
 public class Rock extends ChessPiece {
-    public Rock(ChessPieceColor pieceColor) {
+    public Rock(ChessColor pieceColor) {
         super(pieceColor);
     }
 
-    public Rock(ChessPieceColor color, BoardPosition boardPosition) {
+    public Rock(ChessColor color, BoardPosition boardPosition) {
         super(color, boardPosition);
     }
 

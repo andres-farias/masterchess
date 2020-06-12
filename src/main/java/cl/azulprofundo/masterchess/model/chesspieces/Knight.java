@@ -2,17 +2,18 @@ package cl.azulprofundo.masterchess.model.chesspieces;
 
 import cl.azulprofundo.masterchess.model.board.BoardColumnsEnum;
 import cl.azulprofundo.masterchess.model.board.BoardPosition;
+import cl.azulprofundo.masterchess.model.gameplay.ChessColor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Knight extends ChessPiece {
 
-    public Knight(ChessPieceColor pieceColor) {
+    public Knight(ChessColor pieceColor) {
         super(pieceColor);
     }
 
-    public Knight(ChessPieceColor pieceColor, BoardPosition boardPosition) {
+    public Knight(ChessColor pieceColor, BoardPosition boardPosition) {
         super(pieceColor, boardPosition);
     }
 

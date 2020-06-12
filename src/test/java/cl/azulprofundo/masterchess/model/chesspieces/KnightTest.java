@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.List;
 
 import static cl.azulprofundo.masterchess.model.board.BoardColumnsEnum.*;
-import static cl.azulprofundo.masterchess.model.chesspieces.ChessPieceColor.WHITE;
+import static cl.azulprofundo.masterchess.model.gameplay.ChessColor.WHITE;
 import static org.junit.Assert.assertEquals;
 
 public class KnightTest {

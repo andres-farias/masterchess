@@ -1,15 +1,16 @@
 package cl.azulprofundo.masterchess.model.chesspieces;
 
 import cl.azulprofundo.masterchess.model.board.BoardPosition;
+import cl.azulprofundo.masterchess.model.gameplay.ChessColor;
 
 import java.util.List;
 
 public class King extends ChessPiece {
-    public King(ChessPieceColor pieceColor) {
+    public King(ChessColor pieceColor) {
         super(pieceColor);
     }
 
-    public King(ChessPieceColor pieceColor, BoardPosition boardPosition) {
+    public King(ChessColor pieceColor, BoardPosition boardPosition) {
         super(pieceColor, boardPosition);
     }
 

@@ -1,6 +1,6 @@
 package cl.azulprofundo.masterchess.web;
 
-import cl.azulprofundo.masterchess.gameplay.GameStarter;
+import cl.azulprofundo.masterchess.model.gameplay.GameStarter;
 import cl.azulprofundo.masterchess.model.board.BoardState;
 
 import javax.servlet.annotation.WebServlet;

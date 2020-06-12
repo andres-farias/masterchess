@@ -1,4 +1,4 @@
-package cl.azulprofundo.masterchess.gameplay;
+package cl.azulprofundo.masterchess.model.gameplay;
 
 import cl.azulprofundo.masterchess.model.board.BoardState;
 import org.junit.Test;

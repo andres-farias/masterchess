@@ -1,6 +1,7 @@
 package cl.azulprofundo.masterchess.model.board;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -13,11 +14,14 @@ public class BoardPositionFactory {
      *
      * @return The list of positions of a board.
      */
-    public static List<BoardPosition> getAllBoardPositions() {
-        List<BoardPosition> boardPositions = new ArrayList<>();
+    public static HashMap<BoardColumnsEnum, HashMap<Integer, BoardPosition>> getAllBoardPositions() {
+        HashMap<BoardColumnsEnum, HashMap<Integer, BoardPosition>> boardPositions = new HashMap<>();
         for (BoardColumnsEnum column : BoardColumnsEnum.values()) {
+            HashMap<Integer, BoardPosition> theColumn = new HashMap<>();
+            boardPositions.put(column, theColumn);
+
             for (int raw = 1; raw <= 8; raw++) {
-                boardPositions.add(new BoardPosition(column, raw));
+                theColumn.put(raw, new BoardPosition(column, raw));
             }
         }
 
