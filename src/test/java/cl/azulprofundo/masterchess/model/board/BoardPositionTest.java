@@ -8,7 +8,7 @@ public class BoardPositionTest {
 
     @Test
     public void testValid() {
-        BoardPosition boardPosition = new BoardPosition(BoardColumnsEnum.A, 1);
+        BoardPosition boardPosition = new BoardPosition(BoardColumn.A, 1);
         assertTrue(boardPosition.isValid());
         assertFalse(boardPosition.isNullPosition());
     }
@@ -27,9 +27,9 @@ public class BoardPositionTest {
 
     @Test
     public void testEquals() {
-        BoardPosition boardPosition1 = new BoardPosition(BoardColumnsEnum.A, 1);
-        BoardPosition boardPosition2 = new BoardPosition(BoardColumnsEnum.A, 2);
-        BoardPosition boardPosition3 = new BoardPosition(BoardColumnsEnum.A, 1);
+        BoardPosition boardPosition1 = new BoardPosition(BoardColumn.A, 1);
+        BoardPosition boardPosition2 = new BoardPosition(BoardColumn.A, 2);
+        BoardPosition boardPosition3 = new BoardPosition(BoardColumn.A, 1);
 
         assertEquals(boardPosition1, boardPosition3);
         assertNotEquals(boardPosition1, boardPosition2);

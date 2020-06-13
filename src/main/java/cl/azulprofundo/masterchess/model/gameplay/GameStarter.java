@@ -1,6 +1,6 @@
 package cl.azulprofundo.masterchess.model.gameplay;
 
-import cl.azulprofundo.masterchess.model.board.BoardColumnsEnum;
+import cl.azulprofundo.masterchess.model.board.BoardColumn;
 import cl.azulprofundo.masterchess.model.board.BoardPosition;
 import cl.azulprofundo.masterchess.model.board.BoardState;
 import cl.azulprofundo.masterchess.model.chesspieces.*;
@@ -8,7 +8,7 @@ import cl.azulprofundo.masterchess.model.chesspieces.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static cl.azulprofundo.masterchess.model.board.BoardColumnsEnum.*;
+import static cl.azulprofundo.masterchess.model.board.BoardColumn.*;
 import static cl.azulprofundo.masterchess.model.gameplay.ChessColor.BLACK;
 import static cl.azulprofundo.masterchess.model.gameplay.ChessColor.WHITE;
 
@@ -21,7 +21,7 @@ public class GameStarter {
 
         List<ChessPiece> pieces = new ArrayList<>();
 
-        for (BoardColumnsEnum column : BoardColumnsEnum.values()) {
+        for (BoardColumn column : BoardColumn.values()) {
             pieces.add(new Pawn(WHITE, new BoardPosition(column, 2)));
             pieces.add(new Pawn(BLACK, new BoardPosition(column, 7)));
         }

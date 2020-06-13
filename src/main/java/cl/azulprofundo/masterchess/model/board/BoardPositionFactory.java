@@ -1,8 +1,6 @@
 package cl.azulprofundo.masterchess.model.board;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * This class is responsible for factoring the (singleton) positions of a board.
@@ -14,9 +12,9 @@ public class BoardPositionFactory {
      *
      * @return The list of positions of a board.
      */
-    public static HashMap<BoardColumnsEnum, HashMap<Integer, BoardPosition>> getAllBoardPositions() {
-        HashMap<BoardColumnsEnum, HashMap<Integer, BoardPosition>> boardPositions = new HashMap<>();
-        for (BoardColumnsEnum column : BoardColumnsEnum.values()) {
+    public static HashMap<BoardColumn, HashMap<Integer, BoardPosition>> getAllBoardPositions() {
+        HashMap<BoardColumn, HashMap<Integer, BoardPosition>> boardPositions = new HashMap<>();
+        for (BoardColumn column : BoardColumn.values()) {
             HashMap<Integer, BoardPosition> theColumn = new HashMap<>();
             boardPositions.put(column, theColumn);
 

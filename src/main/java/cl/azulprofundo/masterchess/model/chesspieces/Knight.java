@@ -1,11 +1,16 @@
 package cl.azulprofundo.masterchess.model.chesspieces;
 
-import cl.azulprofundo.masterchess.model.board.BoardColumnsEnum;
+import cl.azulprofundo.masterchess.model.board.BoardColumn;
 import cl.azulprofundo.masterchess.model.board.BoardPosition;
 import cl.azulprofundo.masterchess.model.gameplay.ChessColor;
 
+import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+
+import static cl.azulprofundo.masterchess.model.board.BoardColumn.*;
 
 public class Knight extends ChessPiece {
 
@@ -25,54 +30,130 @@ public class Knight extends ChessPiece {
     @Override
     public List<BoardPosition> getPossiblePositionsFromMoves() {
 
-        List<BoardPosition> possiblePositions = new ArrayList<>();
+        BoardPosition[] boardPositions = {getFrontLeftJump(), getFrontRightJump(), getBackLeftJump(),
+                getBackRightJump(), getLeftUpJump(), getLeftDownJump(), getRightUpJump(), getRightDownJump()};
+        List<BoardPosition> positions = new ArrayList<>(Arrays.asList(boardPositions));
+        positions.removeIf(BoardPosition::isNullPosition);
 
-        BoardPosition boardPosition = getBoardPosition();
-        int raw = boardPosition.getRaw();
-        BoardColumnsEnum column = boardPosition.getColumn();
-        int columnValue = column.getValue();
+        return positions;
+    }
 
-        /* Frontal moves */
-        if (raw < 7) {
-            if (columnValue < 8) {
-                possiblePositions.add(new BoardPosition(BoardColumnsEnum.values()[columnValue + 1], raw + 2));
-            }
-            if (columnValue > 1) {
-                possiblePositions.add(new BoardPosition(BoardColumnsEnum.values()[columnValue - 1], raw + 2));
-            }
+    /**
+     * This method is responsible for returning a specific Knight move: Left Up Jump.
+     *
+     * @return The left up jump <code>{@link BoardPosition}</code> of this horse or a
+     * <code>{@link cl.azulprofundo.masterchess.model.board.BoardPosition.NullBoardPosition}</code>. instance.
+     */
+    protected BoardPosition getLeftUpJump() {
+        BoardPosition currentPosition = this.getBoardPosition();
+        try {
+            return new BoardPosition(currentPosition.getColumn().prev().prev(), currentPosition.getRaw() + 1);
+        } catch (IndexOutOfBoundsException iof) {
+            return BoardPosition.getNullPosition();
         }
-
-        /* Backward moves */
-        if (raw > 2) {
-            if (columnValue < 8) {
-                possiblePositions.add(new BoardPosition(BoardColumnsEnum.values()[columnValue + 1], raw - 2));
-            }
-            if (columnValue > 1) {
-                possiblePositions.add(new BoardPosition(BoardColumnsEnum.values()[columnValue - 1], raw - 2));
-            }
+    }
+    /**
+     * This method is responsible for returning a specific Knight move: Left Down Jump.
+     *
+     * @return The left down jump <code>{@link BoardPosition}</code> of this horse or a
+     * <code>{@link cl.azulprofundo.masterchess.model.board.BoardPosition.NullBoardPosition}</code>. instance.
+     */
+    protected BoardPosition getLeftDownJump() {
+        BoardPosition currentPosition = this.getBoardPosition();
+        try {
+            return new BoardPosition(currentPosition.getColumn().prev().prev(), currentPosition.getRaw() - 1);
+        } catch (IndexOutOfBoundsException iof) {
+            return BoardPosition.getNullPosition();
         }
+    }
 
-        /* Left moves */
-        if (columnValue > 2) {
-            if (raw < 8) {
-                possiblePositions.add(new BoardPosition(BoardColumnsEnum.values()[columnValue - 2], raw + 1));
-            }
-            if (raw > 1) {
-                possiblePositions.add(new BoardPosition(BoardColumnsEnum.values()[columnValue - 2], raw - 1));
-            }
+    /**
+     * This method is responsible for returning a specific Knight move: Right Up Jump.
+     *
+     * @return The left up jump <code>{@link BoardPosition}</code> of this horse or a
+     * <code>{@link cl.azulprofundo.masterchess.model.board.BoardPosition.NullBoardPosition}</code>. instance.
+     */
+    protected BoardPosition getRightUpJump() {
+        BoardPosition currentPosition = this.getBoardPosition();
+        try {
+            return new BoardPosition(currentPosition.getColumn().next().next(), currentPosition.getRaw() + 1);
+        } catch (IndexOutOfBoundsException iof) {
+            return BoardPosition.getNullPosition();
         }
-
-        /* Right moves */
-        if (columnValue < 7) {
-            if (raw < 8) {
-                possiblePositions.add(new BoardPosition(BoardColumnsEnum.values()[columnValue + 2], raw + 1));
-            }
-            if (raw > 1) {
-                possiblePositions.add(new BoardPosition(BoardColumnsEnum.values()[columnValue + 2], raw - 1));
-            }
+    }
+    /**
+     * This method is responsible for returning a specific Knight move: Right Down Jump.
+     *
+     * @return The left down jump <code>{@link BoardPosition}</code> of this horse or a
+     * <code>{@link cl.azulprofundo.masterchess.model.board.BoardPosition.NullBoardPosition}</code>. instance.
+     */
+    protected BoardPosition getRightDownJump() {
+        BoardPosition currentPosition = this.getBoardPosition();
+        try {
+            return new BoardPosition(currentPosition.getColumn().next().next(), currentPosition.getRaw() - 1);
+        } catch (IndexOutOfBoundsException iof) {
+            return BoardPosition.getNullPosition();
         }
+    }
 
-        return possiblePositions;
+    /**
+     * This method is responsible for returning a specific Knight move: Front Right Jump.
+     *
+     * @return The front right jump <code>{@link BoardPosition}</code> of this horse or a
+     * <code>{@link cl.azulprofundo.masterchess.model.board.BoardPosition.NullBoardPosition}</code>. instance.
+     */
+    protected BoardPosition getFrontRightJump() {
+        BoardPosition currentPosition = this.getBoardPosition();
+        try {
+            return new BoardPosition(currentPosition.getColumn().next(), currentPosition.getRaw() + 2);
+        } catch (IndexOutOfBoundsException iof) {
+            return BoardPosition.getNullPosition();
+        }
+    }
+
+    /**
+     * This method is responsible for returning a specific Knight move: Front Left Jump.
+     *
+     * @return The front left jump <code>{@link BoardPosition}</code> of this horse or a
+     * <code>{@link cl.azulprofundo.masterchess.model.board.BoardPosition.NullBoardPosition}</code>. instance.
+     */
+    protected BoardPosition getFrontLeftJump() {
+        BoardPosition currentPosition = this.getBoardPosition();
+        try {
+            return new BoardPosition(currentPosition.getColumn().prev(), currentPosition.getRaw() + 2);
+        } catch (IndexOutOfBoundsException iof) {
+            return BoardPosition.getNullPosition();
+        }
+    }
+
+    /**
+     * This method is responsible for returning a specific Knight move: Back Right Jump.
+     *
+     * @return The front right jump <code>{@link BoardPosition}</code> of this horse or a
+     * <code>{@link cl.azulprofundo.masterchess.model.board.BoardPosition.NullBoardPosition}</code>. instance.
+     */
+    protected BoardPosition getBackRightJump() {
+        BoardPosition currentPosition = this.getBoardPosition();
+        try {
+            return new BoardPosition(currentPosition.getColumn().next(), currentPosition.getRaw() - 2);
+        } catch (IndexOutOfBoundsException iof) {
+            return BoardPosition.getNullPosition();
+        }
+    }
+
+    /**
+     * This method is responsible for returning a specific Knight move: Front Left Jump.
+     *
+     * @return The front left jump <code>{@link BoardPosition}</code> of this horse or a
+     * <code>{@link cl.azulprofundo.masterchess.model.board.BoardPosition.NullBoardPosition}</code>. instance.
+     */
+    public BoardPosition getBackLeftJump() {
+        BoardPosition currentPosition = this.getBoardPosition();
+        try {
+            return new BoardPosition(currentPosition.getColumn().prev(), currentPosition.getRaw() - 2);
+        } catch (IndexOutOfBoundsException iof) {
+            return BoardPosition.getNullPosition();
+        }
     }
 
     @Override

@@ -1,5 +1,8 @@
 package cl.azulprofundo.masterchess.model.board;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * This class aims to provide crosscut useful tools for supporting de model programming.
  *
@@ -22,15 +25,31 @@ public class BoardUtils {
     }
 
     /**
+     * This method is responsible for returning a diagonal created from a given point till the bord of the board.
+     * @param position The position from which the diagonal is build.
+     * @return The list of positions
+     */
+    public static List<BoardPosition> getDiagonalTowardsLeftFrom(BoardPosition position) {
+
+        List<BoardPosition> diagonal = new ArrayList<>();
+        BoardPosition current = position;
+        while ((current = current.getFrontLeftPosition()) != null) {
+            diagonal.add(current);
+        }
+
+        return diagonal;
+    }
+
+    /**
      * This method is responsible for returning a column with the elements ordered from the lower raw to the greater
      * raw with respect to the board.
      *
      * @param aColumn The name of the column to be retrieved.
      * @return The column requested with all its positions
      */
-    public BoardColumn getColumn(BoardColumnsEnum aColumn) {
+    public ColumnVector getColumn(BoardColumn aColumn) {
 
-        BoardColumn theColumn = new BoardColumn();
+        ColumnVector theColumn = new ColumnVector();
         for (int aRaw = 0; aRaw < 8; aRaw++) {
             theColumn.append(this.board.getPosition(aColumn, aRaw));
         }

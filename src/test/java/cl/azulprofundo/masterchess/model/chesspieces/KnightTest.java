@@ -5,9 +5,9 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static cl.azulprofundo.masterchess.model.board.BoardColumnsEnum.*;
+import static cl.azulprofundo.masterchess.model.board.BoardColumn.*;
 import static cl.azulprofundo.masterchess.model.gameplay.ChessColor.WHITE;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class KnightTest {
 
@@ -69,5 +69,23 @@ public class KnightTest {
 
         List<BoardPosition> possiblePositionsFromMoves = whiteKnight.getPossiblePositionsFromMoves();
         assertEquals(8, possiblePositionsFromMoves.size());
+    }
+
+    @Test
+    public void testJumpsFromUpperRightCorner() {
+        BoardPosition upperRightCorner = new BoardPosition(H, 8);
+        Knight whiteKnight = new Knight(WHITE, upperRightCorner);
+
+        assertFalse(whiteKnight.getBackLeftJump().isNullPosition());
+        assertTrue(whiteKnight.getBackRightJump().isNullPosition());
+
+        assertTrue(whiteKnight.getFrontRightJump().isNullPosition());
+        assertTrue(whiteKnight.getFrontLeftJump().isNullPosition());
+
+        assertFalse(whiteKnight.getLeftDownJump().isNullPosition());
+        assertTrue(whiteKnight.getLeftUpJump().isNullPosition());
+
+        assertTrue(whiteKnight.getRightDownJump().isNullPosition());
+        assertTrue(whiteKnight.getRightUpJump().isNullPosition());
     }
 }

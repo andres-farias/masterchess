@@ -26,8 +26,8 @@ public class BoardUtilsTest {
         ChessBoard board = new ChessBoard();
         BoardUtils boardUtils = new BoardUtils(board);
 
-        for (BoardColumnsEnum column : BoardColumnsEnum.values()) {
-            BoardColumn theColumn = boardUtils.getColumn(column);
+        for (BoardColumn column : BoardColumn.values()) {
+            ColumnVector theColumn = boardUtils.getColumn(column);
 
             assertEquals(8, theColumn.size());
         }

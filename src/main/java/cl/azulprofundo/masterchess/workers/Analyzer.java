@@ -3,6 +3,7 @@ package cl.azulprofundo.masterchess.workers;
 import cl.azulprofundo.masterchess.model.gameplay.GameStarter;
 import cl.azulprofundo.masterchess.model.board.BoardState;
 import cl.azulprofundo.masterchess.repositories.BoardStateRepository;
+import net.bull.javamelody.MonitoredWithSpring;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -18,6 +19,7 @@ public class Analyzer {
     private static final Logger logger = LoggerFactory.getLogger(Analyzer.class);
 
     @Bean
+    @MonitoredWithSpring
     public CommandLineRunner chessAnalyzer(BoardStateRepository repository) {
         return (args) -> {
             BoardState startingBoard = GameStarter.getStartingBoard();

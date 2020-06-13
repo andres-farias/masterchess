@@ -14,6 +14,8 @@ import static cl.azulprofundo.masterchess.model.gameplay.ChessColor.WHITE;
  */
 public class ChessBoard {
 
+    public static final int MAX_RAW = 8;
+
     /**
      * The Chess White player
      */
@@ -27,7 +29,7 @@ public class ChessBoard {
     /**
      * The squares on the board
      */
-    private HashMap<BoardColumnsEnum, HashMap<Integer, BoardPosition>> positions;
+    private HashMap<BoardColumn, HashMap<Integer, BoardPosition>> positions;
 
     /**
      * This constructor is responsible for instantiate all the objects related to the the chess board.
@@ -62,7 +64,7 @@ public class ChessBoard {
      * @param aRaw    The raw number of the requested position.
      * @return The position on the board.
      */
-    public BoardPosition getPosition(BoardColumnsEnum aColumn, int aRaw) {
+    public BoardPosition getPosition(BoardColumn aColumn, int aRaw) {
         return this.positions.get(aColumn).get(aRaw);
     }
 }
